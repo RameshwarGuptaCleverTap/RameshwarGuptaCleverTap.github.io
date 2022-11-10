@@ -5,7 +5,8 @@
 <h2> Welcome to CleverTap. Please login or update your profile</h2>
 
 <button onclick=cleverTapMethodOUL.call()>LogIn/Signup</button><br><br>
-<button onclick=cleverTapMethodProfilePush.call()>Profile Update</button>
+<button onclick=cleverTapMethodProfilePush.call()>Profile Update</button><br><br>
+<button onclick=cleverTapMethodPushEvents.call()>Send Events</button>
 
 
 
@@ -64,6 +65,18 @@ function cleverTapMethodOUL() {
                     }
         })
     }
+</script>
+
+<script>
+    function cleverTapMethodPushEvents() {
+        clevertap.event.push("Product Viewed", {
+        "Product name":"Apple Watch",
+        "Category":" Accessories",
+        "Price":"$399",
+        "Date": new Date(),
+        "Color": "Navy Bluess"
+});
+}
 </script>
 </body>
 </html> 
