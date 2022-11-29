@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		<script>
 	//	clevertap.setMultiValuesForKey("Product_ids",[]); // Eg: setMultiValuesForKey(‘stuff’, [‘bag’, ‘shoes’])
@@ -36,7 +36,7 @@
         privacy: [],
       };
       // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
-      clevertap.account.push({ id: "TEST-79W-46Z-666Z" });
+      clevertap.account.push({ id: "TEST-4W5-9RR-646Z" });
    
       clevertap.privacy.push({ optOut: false }); //set the flag to true, if the user of the device opts out of sharing their data
    
@@ -76,20 +76,27 @@ wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.clo
      
     </script>
 
-    <!-- <link rel="manifest" href="/manifest.json" /> -->
+    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
        
-    <h1>Push Notification Test</h1>
+    <h1>Biswa Test Website</h1>
     <!-- onUserLogin -->
    
     <!-- event -->
     <button id="event" onclick="pushEvent()">Push Event</button> <br><br>
-    <button id="login" onclick="biswa()">LOGIN</button><br><br>
+    <button id="login" onclick="biswa()">LOGIN for BISWA</button><br><br>
+    <button id="login" onclick="shrey()">LOGIN for SHREY ANAND</button><br><br>
+    <button id="login" onclick="priya()">LOGIN for PRIYA</button><br><br>
+    <button id="login" onclick="aditya()">LOGIN for ADITYA</button><br><br>
     <button id="login" onclick="profilepush()">ProfilePush</button><br><br>
     <button id="loc" onclick="pushnotif()">Send Notification</button><br><br>
     <button id="ctid" onclick="showctid()">Show CT ID </button><br><br>
     <button id="ctid" onclick="pro1()">ADD product 1 </button>><button id="ctid" onclick="remove_pro1()">REMOVE product 1 </button><br><br>
+    <button id="ctid" onclick="pro2()">ADD product 2 </button>><button id="ctid" onclick="remove_pro2()">REMOVE product 2 </button><br><br>
+    <button id="ctid" onclick="pro3()">ADD product 3 </button>><button id="ctid" onclick="remove_pro3()">REMOVE product 3 </button><br><br>
+    <button id="ctid" onclick="pro4()">ADD product 4 </button>><button id="ctid" onclick="remove_pro4()">REMOVE product 4 </button><br><br>
+    <button id="ctid" onclick="pro5()">ADD product 5 </button>><button id="ctid" onclick="remove_pro5()">REMOVE product 5 </button><br><br>
     <button id="ctid" onclick="checkout()">CHECK OUT </button><br><br>
     <button id="pop" onclick="popup_reload()">REQUEST IP with RELOAD</button><br><br>
     
@@ -116,9 +123,9 @@ wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.clo
       let biswa = () => {
         
     var logindetails = {
-				        "Name": "Rameshwar Gupta",            // String
+				        "Name": "Biswa",            // String
     				  "Identity": 2,              // String or number
-    				 "Email": "rameshwar@yopmail.com",         // Email address of the user
+    				 "Email": "biswadeep@clevertap.com",         // Email address of the user
     				    // "Phone": "+917262838",           // Phone (with the country code)
     				    "Gender": "M",                     // Can be either M or F
     				    "DOB": new Date(),                 // Date of Birth. Date object
@@ -144,7 +151,99 @@ wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.clo
              console.log(logindetails);
 			    }
       };
+let shrey = () => {
+        
+    var logindetails = {
+				        "Name": "Shrey",            // String
+    				  "Identity": 28752,              // String or number
+    				 "Email": "shrey.anand@clevertap.com",         // Email address of the user
+    				    // "Phone": "+917262838",           // Phone (with the country code)
+    				    "Gender": "M",                     // Can be either M or F
+    				    "DOB": new Date(),                 // Date of Birth. Date object
+    				// optional fields. controls whether the user will be sent email, push etc.
+    				   "MSG-email": true,                // Disable email notifications
+    				   "MSG-push": true,                  // Enable push notifications
+    				   "MSG-sms": true,                   // Enable sms notifications
+    				   "MSG-whatsapp": true,              // Enable WhatsApp notifications
+    				 }
 
+   if (window.CleverTap) {
+     CleverTap.onUserLogin(JSON.stringify(logindetails));
+     	console.log("onUserLogin from Webview");
+     	 testalert();
+ }
+   else
+	 {
+		  clevertap.onUserLogin.push({
+    				 "Site": logindetails
+    				});
+    					console.log("onUserLogin from website");
+             console.log(JSON.stringify(logindetails));
+             console.log(logindetails);
+			    }
+      };
+      let priya = () => {
+        
+        var logindetails = {
+                            "Name": "Priya",            // String
+                          "Identity": 287742,              // String or number
+                         "Email": "priya.pachisia@clevertap.com",         // Email address of the user
+                            // "Phone": "+917262838",           // Phone (with the country code)
+                            "Gender": "M",                     // Can be either M or F
+                            "DOB": new Date(),                 // Date of Birth. Date object
+                        // optional fields. controls whether the user will be sent email, push etc.
+                           "MSG-email": true,                // Disable email notifications
+                           "MSG-push": true,                  // Enable push notifications
+                           "MSG-sms": true,                   // Enable sms notifications
+                           "MSG-whatsapp": true,              // Enable WhatsApp notifications
+                         }
+    
+       if (window.CleverTap) {
+         CleverTap.onUserLogin(JSON.stringify(logindetails));
+             console.log("onUserLogin from Webview");
+              testalert();
+     }
+       else
+         {
+              clevertap.onUserLogin.push({
+                         "Site": logindetails
+                        });
+                            console.log("onUserLogin from website");
+                 console.log(JSON.stringify(logindetails));
+                 console.log(logindetails);
+                    }
+          };
+           let aditya = () => {
+        
+        var logindetails = {
+                            "Name": "Aditya",            // String
+                          "Identity": 28622742,              // String or number
+                         "Email": "aditya.pethe@clevertap.com",         // Email address of the user
+                            // "Phone": "+917262838",           // Phone (with the country code)
+                            "Gender": "M",                     // Can be either M or F
+                            "DOB": new Date(),                 // Date of Birth. Date object
+                        // optional fields. controls whether the user will be sent email, push etc.
+                           "MSG-email": true,                // Disable email notifications
+                           "MSG-push": true,                  // Enable push notifications
+                           "MSG-sms": true,                   // Enable sms notifications
+                           "MSG-whatsapp": true,              // Enable WhatsApp notifications
+                         }
+    
+       if (window.CleverTap) {
+         CleverTap.onUserLogin(JSON.stringify(logindetails));
+             console.log("onUserLogin from Webview");
+              testalert();
+     }
+       else
+         {
+              clevertap.onUserLogin.push({
+                         "Site": logindetails
+                        });
+                            console.log("onUserLogin from website");
+                 console.log(JSON.stringify(logindetails));
+                 console.log(logindetails);
+                    }
+          };
       let showctid = () => {
         var ctid = clevertap.getCleverTapID();
 				document.getElementById("test").innerHTML = ctid;
@@ -194,7 +293,54 @@ console.log("Chrome_Yes_Click clicked");
         
         clevertap.removeMultiValuesForKey("Product_ids",["CT000001"]);
          };
-         
+         let pro2 = () => {
+        clevertap.event.push("cart",{
+          "Identity":"CT000002",
+          "Name":"Wizrocket Gym Shoes",
+          "ImageURL":"https://rukminim1.flixcart.com/image/612/612/xif0q/shoe/j/z/m/6-9273-6-world-wear-footwear-black-original-imagghh9cgkfmr2x-bb.jpeg"
+        });
+        clevertap.addMultiValuesForKey("Product_ids",["CT000002"]);
+         };
+           let remove_pro2 = () => {
+        
+        clevertap.removeMultiValuesForKey("Product_ids",["CT000002"]);
+         };
+         let pro3 = () => {
+        clevertap.event.push("cart",{
+          "Identity":"CT000003",
+          "Name":"CleverTap Navy Collar T-Shirt",
+          "ImageURL":"https://5.imimg.com/data5/JP/HS/MY-3199429/navy-blue-collar-t-shirt-500x500.jpg"
+        });
+        clevertap.addMultiValuesForKey("Product_ids",["CT000003"]);
+         };
+           let remove_pro3 = () => {
+        
+        clevertap.removeMultiValuesForKey("Product_ids",["CT000003"]);
+         };
+         let pro4 = () => {
+        clevertap.event.push("cart",{
+          "Identity":"CT000004",
+          "Name":"Wizrocket Plain White T-Shirt",
+          "ImageURL":"https://5.imimg.com/data5/PO/FN/MY-52170301/men-plain-t-shirt-500x500.jpg"
+        });
+        clevertap.addMultiValuesForKey("Product_ids",["CT000004"]);
+         };
+           let remove_pro4 = () => {
+        
+        clevertap.removeMultiValuesForKey("Product_ids",["CT000004"]);
+         };
+         let pro5 = () => {
+        clevertap.event.push("cart",{
+          "Identity":"CT000005",
+          "Name":"CleverTap Straight Fit Jeans",
+          "ImageURL":"https://5.imimg.com/data5/SELLER/Default/2021/1/OG/QR/BR/27711435/mens-designer-slim-fit-jeans-500x500.jpeg"
+        });
+        clevertap.addMultiValuesForKey("Product_ids",["CT000005"]);
+         };
+           let remove_pro5 = () => {
+        
+        clevertap.removeMultiValuesForKey("Product_ids",["CT000005"]);
+         };
          let checkout = () => {
           
           if (window.CleverTap) {
