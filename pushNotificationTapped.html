@@ -4,8 +4,7 @@
   <head>
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-		<script>
-	//	clevertap.setMultiValuesForKey("Product_ids",[]); // Eg: setMultiValuesForKey(‘stuff’, [‘bag’, ‘shoes’])
+		<!-- <script>
             function testalert(){
                 Swal.fire({
                   title: 'WEBVIEW',
@@ -17,7 +16,7 @@
                   }
                 })
             }
-        </script>
+        </script> -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,66 +83,14 @@ wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.clo
     <!-- onUserLogin -->
    
     <!-- event -->
-    <button id="event" onclick="pushEvent()">Push Event</button> <br><br>
-    <button id="login" onclick="biswa()">LOGIN</button><br><br>
-    <button id="login" onclick="profilepush()">ProfilePush</button><br><br>
     <button id="loc" onclick="pushnotif()">Send Notification</button><br><br>
     <button id="ctid" onclick="showctid()">Show CT ID </button><br><br>
-    <button id="ctid" onclick="pro1()">ADD product 1 </button>><button id="ctid" onclick="remove_pro1()">REMOVE product 1 </button><br><br>
-    <button id="ctid" onclick="checkout()">CHECK OUT </button><br><br>
     <button id="pop" onclick="popup_reload()">REQUEST IP with RELOAD</button><br><br>
     
     <!-- <button id="ctid" onclick="clear()">Clear CT ID </button><br><br> -->
     <h2 id="test"> </h2>
     <script>
      
-      let pushEvent = () => {
-          
-       if (window.CleverTap) {
-                  // Call Android interface             
-                     
-                    CleverTap.pushEvent("EVENT from webview");
-                    testalert();
-                }
-                else
-                {
-    				clevertap.event.push("EVENT from website");
-    				console.log("EVENT from website");
-    				// clevertap.event.push("TestApiEvent");
-                }
-      };
-
-      let biswa = () => {
-        
-    var logindetails = {
-				        "Name": "Rameshwar Gupta",            // String
-    				  "Identity": 2,              // String or number
-    				 "Email": "rameshwar@yopmail.com",         // Email address of the user
-    				    // "Phone": "+917262838",           // Phone (with the country code)
-    				    "Gender": "M",                     // Can be either M or F
-    				    "DOB": new Date(),                 // Date of Birth. Date object
-    				// optional fields. controls whether the user will be sent email, push etc.
-    				   "MSG-email": true,                // Disable email notifications
-    				   "MSG-push": true,                  // Enable push notifications
-    				   "MSG-sms": true,                   // Enable sms notifications
-    				   "MSG-whatsapp": true,              // Enable WhatsApp notifications
-    				 }
-
-   if (window.CleverTap) {
-     CleverTap.onUserLogin(JSON.stringify(logindetails));
-     	console.log("onUserLogin from Webview");
-     	 testalert();
- }
-   else
-	 {
-		  clevertap.onUserLogin.push({
-    				 "Site": logindetails
-    				});
-    					console.log("onUserLogin from website");
-             console.log(JSON.stringify(logindetails));
-             console.log(logindetails);
-			    }
-      };
 
       let showctid = () => {
         var ctid = clevertap.getCleverTapID();
@@ -180,37 +127,9 @@ console.log("Chrome_Yes_Click clicked");
 
   });
       };
-      let pro1 = () => {
-        clevertap.event.push("cart",{
-          "Identity":"CT000001",
-          "Name":"CleverTap Orange Hoodie",
-          "ImageURL":"https://5.imimg.com/data5/JO/XM/MY-49561403/hoodie2-500x500.jpg"
-        });
-        
-        clevertap.addMultiValuesForKey("Product_ids",["CT000001"]);
-       
-         };
-         let remove_pro1 = () => {
-        
-        clevertap.removeMultiValuesForKey("Product_ids",["CT000001"]);
-         };
+
          
-         let checkout = () => {
-          
-          if (window.CleverTap) {
-                     // Call Android interface             
-                        
-                       CleverTap.pushEvent("checkout");
-                       testalert();
-                   }
-                   else
-                   {
-               clevertap.event.push("checkout");
-               console.log("checkout from website");
-               clevertap.removeValueForKey("Product_ids");
-               
-                   }
-         };
+        
          let popup_reload = () => {
           let confirmAction = confirm("Allow us to track IP ?");
          if (confirmAction) {
