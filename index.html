@@ -86,7 +86,8 @@ wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.clo
     <!-- event -->
     <button id="login" onclick="cleverTapMethodOUL()">Login User</button><br><br>
     <button id="loc" onclick="pushnotif()">Send Notification</button><br><br>
-    <button id="ctid" onclick="showctid()">Show CleverTap T ID </button><br><br>
+    <button id="ctid" onclick="showctid()">Show CleverTap ID </button><br><br>
+    <button id="ctid" onclick="skyllistExplorer()">Register Skillyst Explorer </button><br><br>
     
     
     <!-- <button id="ctid" onclick="clear()">Clear CT ID </button><br><br> -->
@@ -99,6 +100,12 @@ wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.clo
       };
     // </script>
     <br /><br />
+	  
+	  <script>
+		  function skyllistExplorer() {
+        		clevertap.event.push("Skillyst_HP_ExploreFreeTest");
+		  }
+         </script>
 
     <script>
   function cleverTapMethodOUL() {
